@@ -30,6 +30,8 @@ class patient(BaseModel):
     return 'normal'
     elif self.bmi <30:
     return 'normal'
+    else:
+    return 'obese'
     
 
 
@@ -42,5 +44,14 @@ def load_data():
 
 @app.get("/")
 def hello():
+return {'message':'Patient management system api'}
 
-@app.post
+@app.get('/about')
+def about():
+return {'message':'A fully functional api to manage your patient records'}
+
+@app.get('/patient/{patient_id}')
+def view_patient(patient_id:str=path(...,description='id of the patient in the DB',example='P001')):
+
+
+
