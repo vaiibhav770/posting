@@ -42,3 +42,5 @@ def load_data():
 
 @app.get("/")
 def hello():
+
+@app.post
